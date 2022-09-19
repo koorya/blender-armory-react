@@ -1,0 +1,50 @@
+// Auto-generated
+let project = new Project('tower_1_0_22');
+
+project.addSources('Sources');
+project.addLibrary("C:/blender_addons/ArmorySDK2201a/armsdk/armory");
+project.addLibrary("C:/blender_addons/ArmorySDK2201a/armsdk/iron");
+project.addParameter('-dce full');
+project.addParameter('armory.trait.internal.UniformsManager');
+project.addParameter("--macro keep('armory.trait.internal.UniformsManager')");
+project.addParameter('arm.HiddenChildren');
+project.addParameter("--macro keep('arm.HiddenChildren')");
+project.addParameter('armory.trait.WalkNavigation');
+project.addParameter("--macro keep('armory.trait.WalkNavigation')");
+project.addParameter('arm.CurrentLevelController');
+project.addParameter("--macro keep('arm.CurrentLevelController')");
+project.addParameter('arm.MyTrait');
+project.addParameter("--macro keep('arm.MyTrait')");
+project.addShaders("build_tower/compiled/Shaders/*.glsl", { noembed: false});
+project.addAssets("build_tower/compiled/Assets/**", { notinlist: true });
+project.addAssets("build_tower/compiled/Shaders/*.arm", { notinlist: true });
+project.addAssets("C:/blender_addons/ArmorySDK2201a/armsdk/armory/Assets/brdf.png", { notinlist: true });
+project.addAssets("C:/blender_addons/ArmorySDK2201a/armsdk/armory/Assets/smaa_area.png", { notinlist: true });
+project.addAssets("C:/blender_addons/ArmorySDK2201a/armsdk/armory/Assets/smaa_search.png", { notinlist: true });
+project.addDefine('arm_deferred');
+project.addDefine('arm_csm');
+project.addDefine('rp_hdr');
+project.addDefine('rp_renderer=Deferred');
+project.addDefine('rp_shadowmap');
+project.addDefine('rp_shadowmap_cascade=1024');
+project.addDefine('rp_shadowmap_cube=512');
+project.addDefine('rp_background=World');
+project.addDefine('rp_render_to_texture');
+project.addDefine('rp_compositornodes');
+project.addDefine('rp_antialiasing=SMAA');
+project.addDefine('rp_supersampling=1');
+project.addDefine('rp_ssgi=SSAO');
+project.addDefine('rp_bloom');
+project.addDefine('rp_translucency');
+project.addDefine('arm_published');
+project.addDefine('arm_soundcompress');
+project.addDefine('arm_audio');
+project.addDefine('arm_skin');
+project.addDefine('arm_morph_target');
+project.addDefine('arm_particles');
+project.addDefine('arm_loadscreen');
+project.addDefine('arm_resizable');
+project.addDefine('armory');
+
+
+resolve(project);

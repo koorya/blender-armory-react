@@ -1,0 +1,14 @@
+#version 300 es
+precision mediump float;
+precision highp int;
+
+in highp vec3 normal;
+out highp vec4 fragColor;
+
+void main()
+{
+    highp vec3 n = normalize(normal);
+    fragColor = vec4(vec3(0.457236826419830322265625, 0.484187781810760498046875, 0.57047557830810546875).x, vec3(0.457236826419830322265625, 0.484187781810760498046875, 0.57047557830810546875).y, vec3(0.457236826419830322265625, 0.484187781810760498046875, 0.57047557830810546875).z, fragColor.w);
+    fragColor.w = 0.0;
+}
+

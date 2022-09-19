@@ -1,0 +1,75 @@
+-cp C:\blender_addons\ArmorySDK2201a\armsdk\Kha\Sources
+-cp C:\blender_addons\ArmorySDK2201a\armsdk\Kha\Backends\HTML5
+-cp c:\blender_prj\building_tower\Sources
+-cp C:\blender_addons\ArmorySDK2201a\armsdk\armory\Sources
+-cp C:\blender_addons\ArmorySDK2201a\armsdk\iron\Sources
+-cp C:/blender_addons/ArmorySDK2201a/armsdk/armory
+-cp C:/blender_addons/ArmorySDK2201a/armsdk/iron
+-D hxcpp_smart_strings
+-D C:/blender_addons/ArmorySDK2201a/armsdk/armory
+-D C:/blender_addons/ArmorySDK2201a/armsdk/iron
+-D arm_deferred
+-D arm_csm
+-D rp_hdr
+-D rp_renderer=Deferred
+-D rp_shadowmap
+-D rp_shadowmap_cascade=1024
+-D rp_shadowmap_cube=512
+-D rp_background=World
+-D rp_render_to_texture
+-D rp_compositornodes
+-D rp_antialiasing=SMAA
+-D rp_supersampling=1
+-D rp_ssgi=SSAO
+-D rp_bloom
+-D rp_translucency
+-D arm_published
+-D arm_soundcompress
+-D arm_audio
+-D arm_skin
+-D arm_morph_target
+-D arm_particles
+-D arm_loadscreen
+-D arm_resizable
+-D armory
+-D sys_g1
+-D sys_g2
+-D sys_g3
+-D sys_a1
+-D sys_a2
+-D kha_js
+-D kha_g1
+-D kha_g2
+-D kha_g3
+-D kha_a1
+-D kha_a2
+-D canvas_id=khanvas
+-D script_name=kha
+-D sys_g4
+-D kha_g4
+-D kha_webgl
+-D sys_debug-html5
+-D kha_debug-html5
+-D kha_debug-html5_js
+-D sys_html5
+-D kha_html5
+-D kha_html5_js
+-D sys_debug_html5
+-D kha_debug_html5
+-D kha
+-D kha_version=1810
+-D kha_project_name=tower_1_0_22
+-js debug-html5\kha.js
+-dce full
+armory.trait.internal.UniformsManager
+--macro keep('armory.trait.internal.UniformsManager')
+arm.HiddenChildren
+--macro keep('arm.HiddenChildren')
+armory.trait.WalkNavigation
+--macro keep('armory.trait.WalkNavigation')
+arm.CurrentLevelController
+--macro keep('arm.CurrentLevelController')
+arm.MyTrait
+--macro keep('arm.MyTrait')
+-debug
+-main Main

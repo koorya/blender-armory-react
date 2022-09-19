@@ -1,0 +1,32 @@
+#version 100
+#extension GL_EXT_shader_texture_lod : require
+precision mediump float;
+precision highp int;
+
+const float _75[10] = float[](0.132571995258331298828125, 0.12547199428081512451171875, 0.10637299716472625732421875, 0.0807799994945526123046875, 0.0549499988555908203125, 0.03348200023174285888671875, 0.018275000154972076416015625, 0.008933999575674533843994140625, 0.00391199998557567596435546875, 0.00153500004671514034271240234375);
+
+uniform highp vec2 dir;
+uniform highp vec2 screenSize;
+uniform highp sampler2D tex;
+
+varying highp vec2 texCoord;
+
+void main()
+{
+    highp vec2 _step = (dir / screenSize) * 4.0;
+    highp vec3 _34 = texture2DLodEXT(tex, texCoord, 0.0).xyz * 0.132571995258331298828125;
+    gl_FragData[0] = vec4(_34.x, _34.y, _34.z, gl_FragData[0].w);
+    for (int i = 1; i < 10; i++)
+    {
+        highp vec2 s = _step * (float(i) + 0.5);
+        highp vec3 _85 = gl_FragData[0].xyz + (texture2DLodEXT(tex, texCoord + s, 0.0).xyz * _75[i]);
+        gl_FragData[0] = vec4(_85.x, _85.y, _85.z, gl_FragData[0].w);
+        highp vec3 _101 = gl_FragData[0].xyz + (texture2DLodEXT(tex, texCoord - s, 0.0).xyz * _75[i]);
+        gl_FragData[0] = vec4(_101.x, _101.y, _101.z, gl_FragData[0].w);
+    }
+    highp vec3 _109 = gl_FragData[0].xyz * 0.86000001430511474609375;
+    gl_FragData[0] = vec4(_109.x, _109.y, _109.z, gl_FragData[0].w);
+    highp vec3 _116 = min(gl_FragData[0].xyz, vec3(64.0));
+    gl_FragData[0] = vec4(_116.x, _116.y, _116.z, gl_FragData[0].w);
+}
+
